@@ -109,3 +109,4 @@ Sin embargo, creo que en cierta manera sí tendría sentido que ñix.es intente 
 Creo que va bien recabar proyectos similares para aprender de ellos o buscar colaboraciones.
 
 * [BCN Engineering](https://bcneng.org/)
+* [El tildeverso](https://tildeverse.org/), una comunidad de gente que hospeda servidores tipo UNIX y da cuentas, tienen IRC y demás frikadas.

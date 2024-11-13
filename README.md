@@ -80,7 +80,7 @@ En los últimos años he desarrollado unas cuantas iniciativas que creo que se a
 Un recurso para encontrar trabajos de informática verdaderamente remotos.
 Creo que es un servicio interesante para la comunidad.
 
-En realidad, remote-es prácticamente no necesita mantenimiento, pero creo que estaría bien que tuviese una governancia más compartida.
+En realidad, remote-es prácticamente no necesita mantenimiento, pero creo que estaría bien que tuviese una gobernanza más compartida.
 
 #### [festivus-es](https://github.com/festivus-es)
 

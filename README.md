@@ -47,7 +47,7 @@ Soy fan de las listas de correos, pero últimamente estoy bastante encandilado c
 
 #### Forja de software
 
-No lo veo claro, porque hay proyectos que existen ya como [SourceHut](https://sourcehut.org/) y [Codeberg](https://codeberg.org/) y no estoy convencido que una forja "española" aporte.
+No lo veo claro, porque hay proyectos que existen ya como [SourceHut](https://sourcehut.org/) y [Codeberg](https://codeberg.org/) y no estoy convencido de que una forja "española" aporte.
 
 Sin embargo, creo que una forja sería bastante práctica para la comunidad.
 Pero me inclino más a invertir en SourceHut o Codeberg.

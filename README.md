@@ -112,3 +112,4 @@ Creo que va bien recabar proyectos similares para aprender de ellos o buscar col
   Más parecidos en <https://github.com/comunidad-tecnologica/awesome-spanish-slack-dev-groups>.
   (Que parece muerto, igual sería otro proyecto apadrinable.)
 * [El tildeverso](https://tildeverse.org/), una comunidad de gente que hospeda servidores tipo UNIX y da cuentas, tienen IRC y demás frikadas.
+* [Lectura.Social](https://editoraconcarrito.com/2024/01/lectura-social-una-alternativa-a-goodreads-que-no-trafica-con-tus-datos/), algo parecido a lo que tengo en mente, pero de otro ámbito.

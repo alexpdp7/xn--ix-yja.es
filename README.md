@@ -51,6 +51,7 @@ No lo veo claro, porque hay proyectos que existen ya como [SourceHut](https://so
 
 Sin embargo, creo que una forja sería bastante práctica para la comunidad.
 Pero me inclino más a invertir en SourceHut o Codeberg.
+(Sin embargo, SourceHut o Codeberg obligarían a que si hay contenido de ñix.es en uno de estos sistemas, quien quiera contribuir tenga que pagar una cuenta de estos servicios.)
 
 #### Chat
 

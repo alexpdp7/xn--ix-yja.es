@@ -72,6 +72,10 @@ No lo acabo de ver porque hay servidores de Mastodon gratuitos, pero creo que te
 Lamentablemente, creo que todavía no es muy asequible usar un servicio hospedado de Mastodon con dominio.
 Mis experimentos con Takahe son prometedores, pero su futuro parece incierto.
 
+#### Planet
+
+Agregador público de RSS.
+
 ### Algunas cosas que intento hacer
 
 En los últimos años he desarrollado unas cuantas iniciativas que creo que se alinean un poco con lo que quiero que sea ñix.es.

@@ -2,6 +2,8 @@
 
 (`xn--ix-yja.es` es ñix.es en punycode.)
 
+Si lees esto y te interesa, por favor escríbeme a alex arroba corcoles punto net.
+
 ñix.es quiere ser una comunidad autogobernada para gente relacionada con la informática en España.
 
 Nota importante: si hay comunidades existentes operativas, igual es mejor incorporarse a ellas.

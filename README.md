@@ -9,6 +9,10 @@ Si lees esto y crees que hay posibilidad de alinearse con algo existente, ¡es u
 Hacedme saber si tengo que mirar algo que no conozco.
 
 Aunque soy miembro de bastantes comunidades online, la mayoría son o internacionales o anglosajonas; me falta una comunidad más local.
+Creo que hay muchos síntomas de que nos faltan comunidades:
+
+* Se masca el descontento con las redes sociales comerciales y la nostalgia por las antiguas comunidades de Internet.
+* Hay gente que usa los LLMs para discutir ideas, quizá porque no sienten que tengan gente con la que hablar.
 
 La idea es que los miembros de ñix.es decidan los objetivos de la comunidad, pero una propuesta inicial sería:
 

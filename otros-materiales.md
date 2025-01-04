@@ -14,3 +14,8 @@ Creo que va bien recabar proyectos similares para aprender de ellos o buscar col
   Más parecidos en <https://github.com/comunidad-tecnologica/awesome-spanish-slack-dev-groups>.
   (Que parece muerto, igual sería otro proyecto apadrinable.)
 * [El tildeverso](https://tildeverse.org/), una comunidad de gente que hospeda servidores tipo UNIX y da cuentas, tienen IRC y demás frikadas.
+* [Los chapters de la ACM](https://www.acm.org/chapters/find-a-chapter).
+  Ahora mismo hay cinco:
+
+  * De estudiantes en Salamanca, Madrid, Valencia.
+  * De profesionales en Zaragoza, Barcelona.

@@ -1,6 +1,6 @@
-# ñix.es
+#  [ñix.es](https://ñix.es)
 
-(`xn--ix-yja.es` es ñix.es en punycode.)
+([`xn--ix-yja.es`](https://xn--ix-yja.es) es [ñix.es](https://ñix.es) en punycode.)
 
 Si lees esto y te interesa, por favor escríbeme a alex arroba corcoles punto net o usa los mecanismos de interacción de GitHub (issues, PRs, discusiones).
 

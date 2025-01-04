@@ -2,7 +2,7 @@
 
 (`xn--ix-yja.es` es ñix.es en punycode.)
 
-Si lees esto y te interesa, por favor escríbeme a alex arroba corcoles punto net.
+Si lees esto y te interesa, por favor escríbeme a alex arroba corcoles punto net o usa los mecanismos de interacción de GitHub (issues, PRs, discusiones).
 
 ñix.es quiere ser una comunidad autogobernada para gente relacionada con la informática en España.
 

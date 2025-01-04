@@ -19,3 +19,7 @@ Creo que va bien recabar proyectos similares para aprender de ellos o buscar col
 
   * De estudiantes en Salamanca, Madrid, Valencia.
   * De profesionales en Zaragoza, Barcelona.
+
+## Lecturas
+
+* [Governable spaces](https://www.ucpress.edu/read/books/governable-spaces)

@@ -1,0 +1,22 @@
+* Hosting
+
+Some hosting options cheaper than 10€/month (including VAT).
+Providers from [[https://european-alternatives.eu/category/vps-virtual-private-server-hosters][European alternatives - virtual private server (VPS) hosters]].
+
+| Provider | Model        | RAM | Storage | Monthly (21% VAT) | Notes |
+|----------+--------------+-----+---------+-------------------+-------|
+| Netcup   | VPS 250 G11s |   2 |      64 |              4.05 |       |
+| Hetzner  | CX22/CAX11   |   4 |      40 |              4.59 |       |
+| Netcup   | VPS 500 G11s |   4 |     128 |              4.84 |       |
+| Netcup   | VPS 1000 G11 |   8 |     256 |              6.96 |       |
+| Hetzner  | CAX21        |   8 |      80 |              7.85 | ARM   |
+| Hetzner  | CX32         |   8 |      80 |              8.23 |       |
+
+** Bandwidth details
+*** Netcup
+
+Throttling when daily usage exceeds 2Tb.
+
+*** Hetzner
+
+20Tb/month free, 1.21€ per extra Tb.

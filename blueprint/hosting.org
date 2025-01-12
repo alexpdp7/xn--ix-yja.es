@@ -6,11 +6,13 @@ Providers from [[https://european-alternatives.eu/category/vps-virtual-private-s
 | Provider | Model        | RAM | Storage | Monthly (21% VAT) | Notes |
 |----------+--------------+-----+---------+-------------------+-------|
 | Netcup   | VPS 250 G11s |   2 |      64 |              4.05 |       |
+| Contabo  | Cloud VPS 1  |   6 |     100 |              4.50 |       |
 | Hetzner  | CX22/CAX11   |   4 |      40 |              4.59 |       |
 | Netcup   | VPS 500 G11s |   4 |     128 |              4.84 |       |
 | Netcup   | VPS 1000 G11 |   8 |     256 |              6.96 |       |
 | Hetzner  | CAX21        |   8 |      80 |              7.85 | ARM   |
 | Hetzner  | CX32         |   8 |      80 |              8.23 |       |
+| Contabo  | Cloud VPS 2  |  16 |     200 |              9.50 |       |
 
 ** Bandwidth details
 *** Netcup
@@ -20,3 +22,7 @@ Throttling when daily usage exceeds 2Tb.
 *** Hetzner
 
 20Tb/month free, 1.21€ per extra Tb.
+
+*** Contabo
+
+32Tb/month free, throttled if overused for 10 days.

@@ -25,3 +25,4 @@ La idea es que los miembros de ñix.es decidan los objetivos de la comunidad, pe
 * [Ideas sobre organización](ideas-sobre-organizacion.md)
 * [Posibles iniciativas](posibles-iniciativas.md)
 * [Otros materiales](otros-materiales.md)
+* [Blueprint](blueprint/) documentos en inglés que documentan como realizar iniciativas autoalojadas similares.

@@ -62,3 +62,7 @@ This seems to be possible on the old Contabo control panel.
 * For a non-ASCII domain name, I had to enter it in the installer as punycode, or the installer entered an infinite loop.
 * The Debian 12 Contabo image runs `unattended-upgrades`.
 * After installing YunoHost, `fail2ban` is enabled.
+
+### Unicode issues
+
+* Outlook for Android does not allow sending emails to non-UTF8 domains.

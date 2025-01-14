@@ -33,7 +33,7 @@
 
 ### Domain setup
 
-* Log in to the YunoHost admin interface.
+* Log in to the YunoHost admin interface at https://yourdomain/yunohost/admin/
 * https://github.com/YunoHost/issues/issues/2405 Gandi instructions are outdated, updating the DNS records automatically is not currently possible without patching.
 
 ### Reverse DNS
@@ -49,6 +49,12 @@ This seems to be possible on the old Contabo control panel.
 
 * Run the internal diagnosis as per the YunoHost installation instructions.
   If you followed the previous steps, then everything is green.
+
+### Set up a certificate
+
+* Log in to the YunoHost admin interface at https://yourdomain/yunohost/admin/
+* "Domains", select your domain, "Certificate"
+* "Install Let's Encrypt certificate"
 
 ## Notes
 

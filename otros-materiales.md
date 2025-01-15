@@ -19,6 +19,8 @@ Creo que va bien recabar proyectos similares para aprender de ellos o buscar col
 
   * De estudiantes en Salamanca, Madrid, Valencia.
   * De profesionales en Zaragoza, Barcelona.
+* https://websencilla.editora.info
+* https://lectura.social/about
 
 ## Lecturas
 

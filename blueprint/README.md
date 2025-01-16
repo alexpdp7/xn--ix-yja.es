@@ -7,6 +7,22 @@ These documents intend to document how to set up self-hosted services in a reusa
 * [Hosting](hosting.org): hosting providers.
 * [Setup](setup.md): An example installation process using Gandi and Contabo.
 
+## Services
+
+* RSS
+  * Feed reader
+  * Planet
+* Code forge
+* Communication
+  * Mailing lists
+  * Instant messaging
+  * Others (forums, ActivityPub, ...)
+
+## TODO
+
+* Monitoring?
+* YunoHost application backups or full VPS backups?
+
 ## Other references
 
 * [free-for.dev](https://free-for.dev/)

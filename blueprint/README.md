@@ -10,7 +10,7 @@ These documents intend to document how to set up self-hosted services in a reusa
 ## Services
 
 * RSS
-  * Feed reader
+  * [Feed reader](feed-reader.md)
   * Planet
 * Code forge
 * Communication

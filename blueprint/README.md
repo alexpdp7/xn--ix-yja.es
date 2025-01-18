@@ -14,7 +14,7 @@ These documents intend to document how to set up self-hosted services in a reusa
   * Planet
 * Code forge
 * Communication
-  * Mailing lists
+  * [Mailing list](mailing-list.md)
   * Instant messaging
   * Others (forums, ActivityPub, ...)
 

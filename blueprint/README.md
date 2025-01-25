@@ -12,7 +12,7 @@ These documents intend to document how to set up self-hosted services in a reusa
 * RSS
   * [Feed reader](feed-reader.md)
   * Planet
-* Code forge
+* Code forge: Forgejo seems to just work
 * Communication
   * [Mailing list](mailing-list.md)
   * Instant messaging

@@ -56,11 +56,15 @@ This seems to be possible on the old Contabo control panel.
 * "Domains", select your domain, "Certificate"
 * "Install Let's Encrypt certificate"
 
+## TODO
+
+* The default Contabo Debian unattended-upgrades configuration does not update everything, because YunoHost adds more apt sources.
+  Check if the unattended-upgrades *YunoHost* application updates everything OOB.
+
 ## Notes
 
 * After initial setup, `root` password might only be useful on the VNC console for recovery?
 * For a non-ASCII domain name, I had to enter it in the installer as punycode, or the installer entered an infinite loop.
-* The Debian 12 Contabo image runs `unattended-upgrades`.
 * After installing YunoHost, `fail2ban` is enabled.
 
 ### Unicode issues

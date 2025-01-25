@@ -60,6 +60,7 @@ This seems to be possible on the old Contabo control panel.
 
 * The default Contabo Debian unattended-upgrades configuration does not update everything, because YunoHost adds more apt sources.
   Check if the unattended-upgrades *YunoHost* application updates everything OOB.
+* [Issues with spf records and IPv6](https://github.com/YunoHost/issues/issues/2517)
 
 ## Notes
 

@@ -15,7 +15,7 @@ These documents intend to document how to set up self-hosted services in a reusa
 * Code forge: Forgejo seems to just work
 * Communication
   * [Mailing list](mailing-list.md)
-  * Instant messaging
+  * [Instant messaging](instant-messaging.md)
   * Others (forums, ActivityPub, ...)
 
 ## TODO

@@ -20,6 +20,7 @@ These documents intend to document how to set up self-hosted services in a reusa
 
 ## TODO
 
+* Backups (see <https://doc.yunohost.org/en/backup/backup_methods>; Borg, Restic)
 * Monitoring?
 * YunoHost application backups or full VPS backups?
 

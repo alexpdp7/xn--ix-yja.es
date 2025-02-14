@@ -15,3 +15,7 @@
 ## [Google Groups](https://support.google.com/groups/answer/46601?hl=en)
 
 Google Groups is gratis.
+
+## <https://www.freelists.org/>
+
+## <https://lists.riseup.net/www/>

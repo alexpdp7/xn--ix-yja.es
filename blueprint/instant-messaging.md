@@ -24,3 +24,9 @@ Zulip could be a great option because:
 * You can use the web interface, terminal interface, email interface.
 * Third-party clients should be allowed?
 * You can switch from their free/paid services to self-hosted plans easily.
+
+The major cons are:
+
+* Self-hosted service likely requires a dedicated host, esp. if you want email integration.
+* Managed service mentions that communities can opt-in to free upgrade to the plan that includes unlimited archives and public access[^1].
+  However, managed service + custom domain costs a lot of money and is not included in free upgrades.

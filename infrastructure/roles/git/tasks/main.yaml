@@ -1,3 +1,10 @@
 - name: install git
   ansible.builtin.package:
-    name: git
+    name:
+      - git
+      - gitweb
+- name: enable cgid
+  ansible.builtin.command:
+    cmd: a2enmod cgid
+    creates: /etc/apache2/mods-enabled/cgid.load
+  notify: restart web

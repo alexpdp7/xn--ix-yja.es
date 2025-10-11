@@ -18,6 +18,8 @@ Ensure you can `ssh root@ñix.es`, and then:
 uv run ansible-playbook -i ssh-root.yaml -i production.yaml site.yaml
 ```
 
+You might need to `systemctl restart apache2` for the Let's Encrypt certificate.
+
 ## Running Ansible
 
 After bootstrapping, you can run Ansible via ssh with your user and `sudo`.

@@ -1,0 +1,26 @@
+- name: install apache2
+  ansible.builtin.package:
+    name: apache2
+- name: enable mod_md
+  ansible.builtin.command:
+    cmd: a2enmod md
+    creates: /etc/apache2/mods-enabled/md.load
+  notify: restart web
+- name: enable mod_ssl
+  ansible.builtin.command:
+    cmd: a2enmod ssl
+    creates: /etc/apache2/mods-enabled/ssl.load
+  notify: restart web
+- name: ssl site
+  ansible.builtin.copy:
+    dest: /etc/apache2/sites-enabled/ssl.conf
+    content: |
+      MDomain {{ public_hostname_punycode }}
+      MDCertificateAgreement accepted
+
+      <VirtualHost *:443>
+        ServerName {{ public_hostname_punycode }}
+        SSLEngine on
+        ServerAdmin {{ admin_email }}
+      </VirtualHost>
+  notify: restart web

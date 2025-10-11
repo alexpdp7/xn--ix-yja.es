@@ -1,5 +1,15 @@
 # Infrastructure
 
+## Using SSH
+
+Add:
+
+```
+Include .../xn--ix-yja.es/infrastructure/ssh_config
+```
+
+to your `~/.ssh/config` before any `Host` statement.
+
 ## Bootstrapping
 
 Ensure you can `ssh root@ñix.es`, and then:

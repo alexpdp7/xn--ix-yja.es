@@ -1,3 +1,7 @@
+ungrouped:
+  hosts:
+    ñix.es:
+      ansible_become: true
 all:
   vars:
     users:

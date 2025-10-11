@@ -1,0 +1,5 @@
+- name: install email software
+  ansible.builtin.package:
+    name:
+      - mutt
+      - urlview

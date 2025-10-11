@@ -43,5 +43,7 @@
           ProxyPreserveHost On
           RequestHeader set X-Real-IP %{REMOTE_ADDR}s
         </Location>
+
+        RedirectMatch "^/$" "/gitweb/?p=infrastructure.git;a=blob;f=README.md;hb=refs/heads/main"
       </VirtualHost>
   notify: restart web

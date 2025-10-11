@@ -1,0 +1,8 @@
+- name: install podman
+  ansible.builtin.package:
+    name: podman
+- name: enable auto update
+  ansible.builtin.systemd_service:
+    name: podman-auto-update.timer
+    enabled: true
+    state: started

@@ -1,0 +1,22 @@
+- name: create user
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell }}"
+    groups:
+      - sudo
+  loop: "{{ users }}"
+- name: create .ssh directory
+  ansible.builtin.file:
+    path: "/home/{{ item.name }}/.ssh"
+    state: directory
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+  loop: "{{ users }}"
+- name: set authorized keys
+  ansible.builtin.copy:
+    dest: "/home/{{ item.name }}/.ssh/authorized_keys"
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+    mode: '0400'
+    content: "{{ item.authorized_keys }}"
+  loop: "{{ users }}"

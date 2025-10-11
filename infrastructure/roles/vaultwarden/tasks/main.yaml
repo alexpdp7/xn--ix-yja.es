@@ -11,7 +11,7 @@
       Exec=/start.sh
       EnvironmentFile=vaultwarden.environment
       Volume=/var/lib/vaultwarden/:/data/
-      PublishPort=127.0.0.1:8080:80
+      Network=host
 
       [Install]
       WantedBy=default.target
@@ -23,6 +23,13 @@
     dest: /etc/containers/systemd/vaultwarden.environment
     content: |
       DOMAIN=https://{{ public_hostname }}/vaultwarden
+      SIGNUPS_DOMAINS_WHITELIST=localhost
+      SIGNUPS_VERIFY=true
+      SMTP_HOST=localhost
+      SMTP_FROM=vaultwarden@localhost
+      SMTP_SECURITY=off
+      ROCKET_ADDRESS=127.0.0.1
+      ROCKET_PORT=8080
   notify:
     - restart quadlet
 - name: create storage

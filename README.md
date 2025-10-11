@@ -1,4 +1,4 @@
-#  [ñix.es](https://ñix.es)
+# [ñix.es](https://ñix.es)
 
 ([`xn--ix-yja.es`](https://xn--ix-yja.es) es [ñix.es](https://ñix.es) en punycode.)
 

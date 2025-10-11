@@ -16,3 +16,9 @@ After [setting your user password](roles/users/README.md):
 ```
 uv run ansible-playbook -K -i production.yaml site.yaml
 ```
+
+## Notes
+
+### Contabo Debian 13
+
+* `unattended-upgrades` configured by default

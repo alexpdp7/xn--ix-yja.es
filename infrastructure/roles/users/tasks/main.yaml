@@ -5,6 +5,12 @@
     groups:
       - sudo
   loop: "{{ users }}"
+- name: accesible home directory (for web serving, for example)
+  ansible.builtin.file:
+    path: "/home/{{ item.name }}"
+    state: directory
+    mode: '0701'
+  loop: "{{ users }}"
 - name: create .ssh directory
   ansible.builtin.file:
     path: "/home/{{ item.name }}/.ssh"

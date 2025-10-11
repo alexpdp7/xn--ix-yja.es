@@ -11,6 +11,11 @@
     cmd: a2enmod ssl
     creates: /etc/apache2/mods-enabled/ssl.load
   notify: restart web
+- name: enable mod_userdir
+  ansible.builtin.command:
+    cmd: a2enmod userdir
+    creates: /etc/apache2/mods-enabled/userdir.load
+  notify: restart web
 - name: ssl site
   ansible.builtin.copy:
     dest: /etc/apache2/sites-enabled/ssl.conf

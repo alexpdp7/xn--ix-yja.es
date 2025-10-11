@@ -1,0 +1,5 @@
+- name: set motd
+  ansible.builtin.copy:
+    content: |
+      Bienvenido a ñix.es
+    dest: /etc/motd

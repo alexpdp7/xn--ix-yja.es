@@ -16,6 +16,16 @@
     cmd: a2enmod userdir
     creates: /etc/apache2/mods-enabled/userdir.load
   notify: restart web
+- name: enable mod_proxy_http
+  ansible.builtin.command:
+    cmd: a2enmod proxy_http
+    creates: /etc/apache2/mods-enabled/proxy_http.load
+  notify: restart web
+- name: enable mod_headers
+  ansible.builtin.command:
+    cmd: a2enmod headers
+    creates: /etc/apache2/mods-enabled/headers.load
+  notify: restart web
 - name: ssl site
   ansible.builtin.copy:
     dest: /etc/apache2/sites-enabled/ssl.conf
@@ -27,5 +37,11 @@
         ServerName {{ public_hostname_punycode }}
         SSLEngine on
         ServerAdmin {{ admin_email }}
+
+        <Location /vaultwarden/>
+          ProxyPass http://127.0.0.1:8080/vaultwarden/
+          ProxyPreserveHost On
+          RequestHeader set X-Real-IP %{REMOTE_ADDR}s
+        </Location>
       </VirtualHost>
   notify: restart web

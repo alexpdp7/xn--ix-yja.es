@@ -1,0 +1,4 @@
+- name: restart quadlet
+  ansible.builtin.systemd_service:
+    name: vaultwarden.service
+    state: restarted

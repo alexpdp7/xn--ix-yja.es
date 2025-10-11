@@ -1,0 +1,37 @@
+- name: create quadlet
+  ansible.builtin.copy:
+    dest: /etc/containers/systemd/vaultwarden.container
+    content: |
+      [Unit]
+      After=network-online.target
+
+      [Container]
+      AutoUpdate=registry
+      Image=ghcr.io/dani-garcia/vaultwarden:latest
+      Exec=/start.sh
+      EnvironmentFile=vaultwarden.environment
+      Volume=/var/lib/vaultwarden/:/data/
+      PublishPort=127.0.0.1:8080:80
+
+      [Install]
+      WantedBy=default.target
+  notify:
+    - systemd daemon reload
+    - restart quadlet
+- name: create environment
+  ansible.builtin.copy:
+    dest: /etc/containers/systemd/vaultwarden.environment
+    content: |
+      DOMAIN=https://{{ public_hostname }}/vaultwarden
+  notify:
+    - restart quadlet
+- name: create storage
+  ansible.builtin.file:
+    name: /var/lib/vaultwarden
+    state: directory
+- meta: flush_handlers
+- name: enable quadlet
+  ansible.builtin.systemd_service:
+    name: vaultwarden.service
+    enabled: true
+    state: started

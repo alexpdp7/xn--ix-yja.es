@@ -3,4 +3,4 @@
   roles:
     - users
     - motd
-
+    - git

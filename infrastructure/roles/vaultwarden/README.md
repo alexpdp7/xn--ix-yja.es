@@ -1,5 +1,10 @@
 # Vaultwarden
 
+## Registering to Vaultwarden
+
+Registration is limited to the `@localhost` domain so that only local users can register.
+Registration requires email validation.
+
 Visit `/vaultwarden`, select "create account", then use `$USER@localhost` as your email address.
 
 1. Run `mutt`.

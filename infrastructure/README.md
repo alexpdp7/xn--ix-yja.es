@@ -29,6 +29,12 @@ After [setting your user password](roles/users/README.md):
 uv run ansible-playbook -K -i production.yaml site.yaml
 ```
 
+## Roles
+
+* The [users](roles/users) role to add new users
+* The [git](roles/git) role to host Git repositories (https and Gitweb)
+* The [vaultwarden](roles/vaultwarden) role for secret management
+
 ## Notes
 
 ### Contabo Debian 13

@@ -1,2 +1,3 @@
 Host ñix.es
-     HostName 155.133.26.104
+     # Apparently, openssh does not support punycode :(
+     HostName xn--ix-yja.es

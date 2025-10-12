@@ -10,8 +10,9 @@
       Image=ghcr.io/dani-garcia/vaultwarden:latest
       Exec=/start.sh
       EnvironmentFile=vaultwarden.environment
-      Volume=/var/lib/vaultwarden/:/data/
+      Volume=/var/lib/vaultwarden/:/data/:idmap
       Network=host
+      UserNS=auto
 
       [Install]
       WantedBy=default.target
@@ -36,6 +37,8 @@
   ansible.builtin.file:
     name: /var/lib/vaultwarden
     state: directory
+  notify:
+    - restart quadlet
 - meta: flush_handlers
 - name: enable quadlet
   ansible.builtin.systemd_service:

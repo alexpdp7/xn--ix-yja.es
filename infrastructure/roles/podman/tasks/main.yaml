@@ -6,3 +6,13 @@
     name: podman-auto-update.timer
     enabled: true
     state: started
+- name: configure containers subuids
+  ansible.builtin.copy:
+    dest: /etc/subuid
+    content: |
+      containers:2147483647:2147483648
+- name: configure containers subgids
+  ansible.builtin.copy:
+    dest: /etc/subgid
+    content: |
+      containers:2147483647:2147483648

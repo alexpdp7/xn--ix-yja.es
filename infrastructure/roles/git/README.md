@@ -29,3 +29,7 @@ ln -s $REPOSITORY_PATH ~/public_html/$REPO.git
 ```
 
 Ensure that you push once to the repo, or run `git update-server-info` in the repository.
+
+## Using non-bare repositories
+
+Alternatively, use non-bare repositories and symlink the `.git` directory to `/var/lib/git` or `~/public_html`.

@@ -29,6 +29,12 @@ After [setting your user password](roles/users/README.md):
 uv run ansible-playbook -K -i production.yaml site.yaml
 ```
 
+Or run from the same host with:
+
+```
+uv run ansible-playbook -K -i local-exec.yaml -i production.yaml site.yaml
+```
+
 ## Roles
 
 * The [users](roles/users) role to add new users

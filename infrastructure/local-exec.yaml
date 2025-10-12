@@ -1,0 +1,4 @@
+ungrouped:
+  hosts:
+    ñix.es:
+      ansible_connection: local

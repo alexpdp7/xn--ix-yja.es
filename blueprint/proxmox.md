@@ -83,6 +83,10 @@ iface vmbr0 inet static
 	post-up   iptables -t nat -A POSTROUTING -s '10.10.10.0/24' -o ens18 -j MASQUERADE
 	post-down iptables -t nat -D POSTROUTING -s '10.10.10.0/24' -o ens18 -j MASQUERADE
 
+# The Proxmox documentation notices that you need the following rules if you use the Proxmox firewall:
+	post-up   iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
+	post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
+
 source /etc/network/interfaces.d/*
 ```
 
@@ -241,3 +245,18 @@ In this case, when enabling the firewall, only management traffic from the `10.4
 
 Proxmox does not seem to allow configuring IP sets that allow any address; `0.0.0.0/0` and other variants are rejected.
 Therefore, if your Proxmox host network interface has a public IPv4 address, then likely you cannot use the default management rules to allow management from any host on the Internet.
+
+### Configuring the firewall
+
+If you configure NAT, then notice that the Proxmox documentation about [Masquerading (NAT) with iptables](https://pve.proxmox.com/pve-docs/chapter-sysadmin.html#sysadmin_network_masquerading) includes the following rules in the interface configuration:
+
+```
+	post-up   iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
+	post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
+```
+
+In my tests, these rules were required, otherwise Proxmox does not route VM and LXC traffic to the Internet.
+
+Additionally, if your VMs and LXC hosts use DHCP/DNS from dnsmasq, then you need to allow traffic from their network to the Proxmox host.
+
+For example, you can create an IP set `internal` for `10.10.10.0/24` and a rule that accepts all traffic from this IP set.

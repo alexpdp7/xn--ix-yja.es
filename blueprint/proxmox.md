@@ -153,8 +153,12 @@ Edit `/etc/resolv.conf` so that the Proxmox machine uses dnsmasq and the interna
 ```
 domain p9net.example.com
 search p9net.example.com
-nameserver 127.0.0.1
+nameserver 10.10.10.1
 ```
+
+By default, VMs and LXC containers get their DNS configuration from `/etc/resolv.conf` on the Proxmox host.
+Therefore, use the `10.10.10.1` IP address of the Proxmox host in `/etc/resolv.conf`, so that VMs and LXC containers get a configuration that works for them.
+(For example, if you use `127.0.0.1`, then VMs and LXC containers try to resolve DNS names using `127.0.0.1`, which does not work.)
 
 Reboot to verify that everything applies correctly.
 Verify DNS configuration by running `host some.domain.you.know`.

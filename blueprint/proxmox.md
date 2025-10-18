@@ -186,3 +186,54 @@ When the live image boots:
 
 * Use Firefox to verify that DNS and Internet work.
 * Run `ssh root@lxc` to verify that you can connect to other hosts in the Proxmox network.
+
+## Firewall
+
+Open an SSH connection to the Proxmox host to ensure you can revert changes.
+If something goes wrong, edit `/etc/pve/firewall/cluster.fw` to change enable to 0.
+Changes to this file apply automatically immediately.
+
+### Examining configuration
+
+Use `iptables-save` to list firewall rules.
+Use `ipset list` to list IP sets.
+
+By default, when you enable the Proxmox firewall, many rules appear automatically.
+These include rules for the [standard IP set management](https://pve.proxmox.com/pve-docs/chapter-pve-firewall.html#_standard_ip_set_span_class_monospaced_management_span) to allow management of Proxmox:
+
+```
+# iptables-save | grep PVEFW-0-management
+-A PVEFW-HOST-IN -p tcp -m set --match-set PVEFW-0-management-v4 src -m tcp --dport 8006 -j RETURN
+-A PVEFW-HOST-IN -p tcp -m set --match-set PVEFW-0-management-v4 src -m tcp --dport 5900:5999 -j RETURN
+-A PVEFW-HOST-IN -p tcp -m set --match-set PVEFW-0-management-v4 src -m tcp --dport 3128 -j RETURN
+-A PVEFW-HOST-IN -p tcp -m set --match-set PVEFW-0-management-v4 src -m tcp --dport 22 -j RETURN
+-A PVEFW-HOST-IN -p tcp -m set --match-set PVEFW-0-management-v4 src -m tcp --dport 60000:60050 -j RETURN
+```
+
+```
+# ipset list
+Name: PVEFW-0-management-v6
+Type: hash:net
+Revision: 7
+Header: family inet6 hashsize 64 maxelem 64 bucketsize 12 initval 0x4d7ac321
+Size in memory: 1240
+References: 5
+Number of entries: 0
+Members:
+
+Name: PVEFW-0-management-v4
+Type: hash:net
+Revision: 7
+Header: family inet hashsize 64 maxelem 64 bucketsize 12 initval 0xd0331705
+Size in memory: 504
+References: 5
+Number of entries: 1
+Members:
+10.43.43.0/25
+```
+
+In the host used to develop this document, `10.43.43.0/25` is the network of the parent Proxmox host.
+In this case, when enabling the firewall, only management traffic from the `10.43.43.0/25` network is allowed.
+
+Proxmox does not seem to allow configuring IP sets that allow any address; `0.0.0.0/0` and other variants are rejected.
+Therefore, if your Proxmox host network interface has a public IPv4 address, then likely you cannot use the default management rules to allow management from any host on the Internet.

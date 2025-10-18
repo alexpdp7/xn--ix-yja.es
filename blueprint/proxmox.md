@@ -115,3 +115,74 @@ root@p9:~# ip a
 ```
 
 VMs and LXC containers should be able to use `10.10.10.x` addresses and connect to the Internet through Proxmox.
+
+## Configure dnsmasq
+
+dnsmasq is a simple to configure DHCP/DNS integrated server.
+
+```
+root@p9:~# apt install dnsmasq
+```
+
+`/etc/dnsmasq.conf` contains configuration documentation.
+By default, `/etc/default/dnsmasq` configures dnsmasq to include configuration files in `/etc/dnsmasq.d`, to leave `dnsmasq.conf` untouched.
+
+Create `/etc/dnsmasq.d/internal`:
+
+```
+domain-needed
+no-resolv
+no-hosts
+
+server=10.43.43.1  # your upstream DNS server
+
+local=/p9net.example.com/
+domain=p9net.example.com
+
+dhcp-range=10.10.10.64,10.10.10.126,255.255.255.0,255.255.255.255,48h
+dhcp-option=option:router,10.10.10.1
+```
+
+This allocates 63 addresses in the `10.10.10.64`-`10.10.10.126` for automatic VM and LXC host addresses, leaving you other ranges for other purposes.
+
+Machines using DHCP get host names like `p9net.example.com` that cannot be used in public DNS.
+If you have a domain `foo.com`, you can use a subdomain `x.y.z.foo.com`.
+
+Edit `/etc/resolv.conf` so that the Proxmox machine uses dnsmasq and the internal domain for DNS:
+
+```
+domain p9net.example.com
+search p9net.example.com
+nameserver 127.0.0.1
+```
+
+Reboot to verify that everything applies correctly.
+Verify DNS configuration by running `host some.domain.you.know`.
+
+### LXC test
+
+Create an LXC container with the web interface:
+
+* Hostname: `lxc.p9net.example.com`
+* Template: `debian-13-standard`
+* IPv4: DHCP
+
+After the container starts:
+
+* Run `apt full-upgrade -U` to update.
+  This verifies that DNS and Internet work.
+* Run `ip a` to verify that you get an IP in the DHCP range.
+* Run `ssh root@lxc` on the Proxmox host to verify that DNS resolution in Proxmox works.
+  (By default, the Debian 13 template disables root password logins.)
+
+### VM test
+
+Download a live system, such as [`debian-live-13.1.0-amd64-gnome.iso`](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.1.0-amd64-gnome.iso) to the Proxmox ISO repository.
+
+* Name: `vm.p9net.example.com`
+* ISO image: `debian-live-13.1.0-amd64-gnome.iso`
+
+When the live image boots:
+
+* Use Firefox to verify that DNS and Internet work.
+* Run `ssh root@lxc` to verify that you can connect to other hosts in the Proxmox network.

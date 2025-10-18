@@ -21,3 +21,7 @@ Sumando las puntuaciones, se obtendría una lista de ordenada de opciones según
 Descubrí que este sistema no es original y se conoce como [voto inmanente](https://en.wikipedia.org/wiki/Score_voting#Advocacy).
 
 Mi idea sería que ñix.es use el voto inmanente para averiguar las preferencias de la comunidad, y que sus miembros acordasen actuar siguiendo estas preferencias.
+
+## Referencias
+
+* [The Tyranny of Structureless](https://www.jofreeman.com/joreen/tyranny.htm)

@@ -258,5 +258,6 @@ If you configure NAT, then notice that the Proxmox documentation about [Masquera
 In my tests, these rules were required, otherwise Proxmox does not route VM and LXC traffic to the Internet.
 
 Additionally, if your VMs and LXC hosts use DHCP/DNS from dnsmasq, then you need to allow traffic from their network to the Proxmox host.
+DHCP requires an additional rule with the DHCPfwd macro.
 
-For example, you can create an IP set `internal` for `10.10.10.0/24` and a rule that accepts all traffic from this IP set.
+For example, you can create an IP set `internal` for `10.10.10.0/24` and a rule that accepts all traffic from this IP set, and another rule with the DHCPfwd macro.

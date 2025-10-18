@@ -63,6 +63,7 @@ Edit `/etc/network/interfaces` to make the private network on `vmbr0`.
 Like the Proxmox documentation, this snippet uses the `10.10.10.0/24` network, with 256 addresses `10.10.10.0`-`10.10.10.255`.
 
 ```
+# See https://pve.proxmox.com/pve-docs/chapter-sysadmin.html#sysadmin_network_masquerading
 auto lo
 iface lo inet loopback
 

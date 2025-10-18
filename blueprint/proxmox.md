@@ -83,7 +83,7 @@ iface vmbr0 inet static
 	post-up   iptables -t nat -A POSTROUTING -s '10.10.10.0/24' -o ens18 -j MASQUERADE
 	post-down iptables -t nat -D POSTROUTING -s '10.10.10.0/24' -o ens18 -j MASQUERADE
 
-# The Proxmox documentation notices that you need the following rules if you use the Proxmox firewall:
+	# By default, the Proxmox firewall is disabled. If you intend to enable the firewall, then include the following lines from the Proxmox documentation linked above:
 	post-up   iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
 	post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
 

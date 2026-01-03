@@ -1,4 +1,8 @@
 ---
+- hosts: local_incus
+  gather_facts: false
+  roles:
+    - incus_provision
 - hosts: all
   roles:
     - users

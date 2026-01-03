@@ -1,0 +1,7 @@
+- name: create incus container
+  ansible.builtin.shell: incus info incus-test-xn--ix-yja-es || incus launch images:debian/13 incus-test-xn--ix-yja-es
+  delegate_to: 127.0.0.1
+- name: install python
+  ansible.builtin.raw: apt install -y python3
+  retries: 10
+  delay: 3

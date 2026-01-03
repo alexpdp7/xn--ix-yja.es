@@ -50,6 +50,12 @@ Then, you can use the following command to create a test VM on Incus and deploy:
 uv run ansible-playbook -i production.yaml -i incus-test-local.yaml site.yaml
 ```
 
+### Accessing
+
+1. Obtain the VM IP address by running `incus list`.
+1. Run `ssh -D 1080 $IP`.
+1. Configure your browser to use a SOCKS v5 proxy on `localhost:1080` and to proxy DNS.
+
 ## Notes
 
 ### Contabo Debian 13

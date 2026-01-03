@@ -13,3 +13,4 @@
     - git
     - podman
     - vaultwarden
+    - ssh

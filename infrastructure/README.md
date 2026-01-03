@@ -44,7 +44,7 @@ uv run ansible-playbook -K -i local-exec.yaml -i production.yaml site.yaml
 ## Testing
 
 With Incus installed, edit `local_incus.hosts.ñix.es.ansible_incus_project` in `incus-test-local.yaml` with your project from `incus project list`.
-Then, you can use the following command to create a test container on Incus and deploy:
+Then, you can use the following command to create a test VM on Incus and deploy:
 
 ```
 uv run ansible-playbook -i production.yaml -i incus-test-local.yaml site.yaml

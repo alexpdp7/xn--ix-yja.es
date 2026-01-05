@@ -12,3 +12,8 @@ Once you can ssh to your user, set your password with `su -c "passwd $(whoami)"`
 
 From then on, use `sudo` for privileged actions.
 Remember to only modify the system using Ansible.
+
+## Test user
+
+The `test` user is intended for testing.
+For example, you can send emails to this user, and impersonate the user to read email.

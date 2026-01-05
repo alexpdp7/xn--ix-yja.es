@@ -1,0 +1,6 @@
+- name: install basic software
+  ansible.builtin.package:
+    name:
+      - man-db
+      - bash-completion
+ 

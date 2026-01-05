@@ -4,3 +4,17 @@
       - mutt
       - urlview
       - exim4
+- name: set up "group" users
+  ansible.builtin.user:
+    name: "{{ item.key }}"
+  loop: "{{ mail_groups | dict2items }}"
+  loop_control:
+    label: "{{ item.key }}"
+- name: set up "group" alias
+  ansible.builtin.blockinfile:
+    path: /etc/aliases
+    block: |
+      root: {{ root_alias }}
+      {% for group, members in mail_groups.items() %}
+      {{ group }}: {{ members | join(', ') }}, {{ group }}
+      {% endfor %}

@@ -40,6 +40,7 @@ uv run ansible-playbook -K -i local-exec.yaml -i production.yaml site.yaml
 * The [users](roles/users) role to add new users
 * The [git](roles/git) role to host Git repositories (https and Gitweb)
 * The [vaultwarden](roles/vaultwarden) role for secret management
+* The [mail](roles/mail) role for email and group emails
 
 ## Testing
 

@@ -4,6 +4,7 @@ ungrouped:
       ansible_become: true
       public_hostname: ñix.es
       public_hostname_punycode: xn--ix-yja.es
+      web_server_reachable: true
 all:
   vars:
     users:

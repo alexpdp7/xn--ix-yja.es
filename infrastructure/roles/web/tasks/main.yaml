@@ -30,12 +30,20 @@
   ansible.builtin.copy:
     dest: /etc/apache2/sites-enabled/ssl.conf
     content: |
+      {% if web_server_reachable %}
       MDomain {{ public_hostname_punycode }}
       MDCertificateAgreement accepted
+      {% endif %}
 
       <VirtualHost *:443>
         ServerName {{ public_hostname_punycode }}
         SSLEngine on
+
+      {% if not web_server_reachable %}
+        SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
+        SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
+      {% endif %}
+
         ServerAdmin {{ admin_email }}
 
         <Location /vaultwarden/>

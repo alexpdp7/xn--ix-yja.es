@@ -6,6 +6,7 @@
 - hosts: all
   roles:
     - users
+    - ssh
     - mail
     - motd
     - web
@@ -13,4 +14,3 @@
     - git
     - podman
     - vaultwarden
-    - ssh

@@ -1,6 +1,13 @@
 - name: create incus container
   ansible.builtin.shell: incus info {{ ansible_incus_host }} || incus launch images:debian/13 {{ ansible_incus_host }} --vm
   delegate_to: 127.0.0.1
+- name: fetch your user id to identify incus project
+  ansible.builtin.command: id -u
+  delegate_to: 127.0.0.1
+  register: uid
+- name: set incus project
+  ansible.builtin.set_fact:
+    ansible_incus_project: user-{{ uid.stdout }}
 - name: install python
   ansible.builtin.raw: apt install -y python3
   retries: 10

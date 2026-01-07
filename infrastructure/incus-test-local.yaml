@@ -4,7 +4,6 @@ local_incus:
       ansible_connection: community.general.incus
       ansible_incus_host: xn--incus-test-ix-es-hub
       ansible_become: false
-      ansible_incus_project: user-1284000001
       web_server_reachable: false
       public_hostname: incus-test-ñix-es
       public_hostname_punycode: xn--incus-test-ix-es-hub

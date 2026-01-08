@@ -18,3 +18,10 @@ Visit `/vaultwarden`, select "create account", then use `$USER@localhost` as you
 1. Press d to delete the "welcome" message.
 1. Press d to delete the "new device" message.
 1. Press q and y to exit and purge deleted messages.
+
+## Security
+
+[The Bitwarden Security Whitepaper](https://bitwarden.com/help/bitwarden-security-white-paper/) says that Bitwarden clients, such as the browser extension, never pass the master password that can decrypt passwords to the Bitwarden server.
+Note that root on the system can tamper with the Vaultwarden web vault, but the browser extensions are controlled by Bitwarden.
+
+Therefore, we recommend changing the master password *before* entering any sensitive data in Vaultwarden, to ensure that the password cannot be snooped by root on the system.

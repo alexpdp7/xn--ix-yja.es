@@ -52,6 +52,6 @@
           RequestHeader set X-Real-IP %{REMOTE_ADDR}s
         </Location>
 
-        RedirectMatch "^/$" "/gitweb/?p=infrastructure.git;a=blob;f=README.md;hb=refs/heads/main"
+        RedirectMatch "^/$" "https://ñix.es/cgit/alex/ñix.es.git/tree/README.md"
       </VirtualHost>
   notify: restart web

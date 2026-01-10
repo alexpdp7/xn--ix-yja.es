@@ -2,9 +2,36 @@
   ansible.builtin.package:
     name:
       - git
-      - gitweb
+      - cgit
 - name: enable cgid
   ansible.builtin.command:
     cmd: a2enmod cgid
     creates: /etc/apache2/mods-enabled/cgid.load
   notify: restart web
+- name: configure cgit
+  ansible.builtin.copy:
+    content: |
+      #
+      # cgit config
+      # see cgitrc(5) for details
+
+      css=/cgit-css/cgit.css
+      logo=/cgit-css/cgit.png
+
+      scan-path=/srv/repos
+    dest: /etc/cgitrc
+- name: create repository directory
+  ansible.builtin.file:
+    path: /srv/repos/
+    state: directory
+    owner: nobody
+    group: www-data
+- name: create user repository directories
+  ansible.builtin.file:
+    path: "/srv/repos/{{ item.name }}"
+    state: directory
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+  loop: "{{ users }}"
+  loop_control:
+    label: "{{ item.name }}"

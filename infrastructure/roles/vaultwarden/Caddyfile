@@ -1,0 +1,40 @@
+{
+	auto_https disable_redirects
+	skip_install_trust
+}
+
+https://localhost:8443 {
+	root .
+
+	handle_path /api/* {
+		rewrite * /vaultwarden/api{path}
+		reverse_proxy https://ñix.es
+	}
+
+	handle_path /identity/* {
+		rewrite * /vaultwarden/identity{path}
+		reverse_proxy https://ñix.es
+	}
+
+	handle_path /icons/* {
+		rewrite * /vaultwarden/icons{path}
+		reverse_proxy https://ñix.es
+	}
+
+	handle_path /events/* {
+		rewrite * /vaultwarden/events{path}
+		reverse_proxy https://ñix.es
+	}
+
+	handle_path /notifications/* {
+		rewrite * /vaultwarden/notifications{path}
+		reverse_proxy https://ñix.es
+	}
+
+	handle_path /css/vaultwarden.css {
+		rewrite * /vaultwarden/css/vaultwarden.css
+		reverse_proxy https://ñix.es
+	}
+
+	file_server
+}

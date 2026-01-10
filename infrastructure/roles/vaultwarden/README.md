@@ -28,3 +28,11 @@ Therefore, we recommend changing the master password *before* entering any sensi
 
 To share secrets among members, organizations should be created from an account without personal data.
 
+### Running a local web vault
+
+Alternatively, you can run the web vault locally to ensure no one has tampered with the web vault.
+
+1. Download and extract the archive from [the Vaultwarden web vault builds](https://github.com/dani-garcia/bw_web_builds/releases/latest).
+1. Copy the [`Caddyfile`](Caddyfile) into the `web-vault` directory.
+1. Run `caddy run`.
+1. Access your vault at <https://localhost:8443>.

@@ -21,6 +21,7 @@
 
       about-filter=/usr/lib/cgit/filters/about-formatting.sh
       readme=:README.md
+      clone-url=https://ñix.es/cgit/$CGIT_REPO_URL ñix.es:/srv/repos/$CGIT_REPO_URL
 
       scan-path=/srv/repos
     dest: /etc/cgitrc

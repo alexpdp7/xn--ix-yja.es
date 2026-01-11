@@ -21,7 +21,7 @@ La idea es que todos los miembros de ñix.es puedan modificar y ejecutar los pla
 
 ñix.es proporciona los siguientes servicios:
 
-* Publicación de repositorios Git con gitweb y https
+* Publicación de repositorios Git
 * Vaultwarden para almacenar secretos
 
 ## Otros

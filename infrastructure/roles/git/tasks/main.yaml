@@ -3,6 +3,7 @@
     name:
       - git
       - cgit
+      - python3-markdown
 - name: enable cgid
   ansible.builtin.command:
     cmd: a2enmod cgid
@@ -17,6 +18,9 @@
 
       css=/cgit-css/cgit.css
       logo=/cgit-css/cgit.png
+
+      about-filter=/usr/lib/cgit/filters/about-formatting.sh
+      readme=:README.md
 
       scan-path=/srv/repos
     dest: /etc/cgitrc

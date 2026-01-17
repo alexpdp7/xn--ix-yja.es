@@ -55,3 +55,18 @@
         RedirectMatch "^/$" "https://ñix.es/cgit/alex/ñix.es.git/about/"
       </VirtualHost>
   notify: restart web
+- name: gemini
+  ansible.builtin.copy:
+    dest: /etc/apache2/conf-enabled/gemini.conf
+    content: |
+      AddType text/gemini .gmi
+      # With the default dir module configuration disabled, DirectoryIndex index enables multiviews for indexes.
+      # This means that you can have index.html and index.gmi and the client and server will negotiate which content to deliver.
+      DirectoryIndex index
+      LoadModule dir_module /usr/lib/apache2/modules/mod_dir.so
+  notify: restart web
+- name: disable dir mod
+  ansible.builtin.command:
+    cmd: a2dismod -f dir
+    removes: /etc/apache2/mods-enabled/dir.conf
+  notify: restart web

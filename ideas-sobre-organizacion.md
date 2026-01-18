@@ -25,3 +25,4 @@ Mi idea sería que ñix.es use el voto inmanente para averiguar las preferencias
 ## Referencias
 
 * [The Tyranny of Structureless](https://www.jofreeman.com/joreen/tyranny.htm)
+* [Asociaciones (Ministerio del Interior)](https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestiones/asociaciones/)

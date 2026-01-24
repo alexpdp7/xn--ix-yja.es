@@ -4,4 +4,4 @@
       - man-db
       - bash-completion
       - borgbackup
-
+      - rsync

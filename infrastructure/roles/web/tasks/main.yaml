@@ -60,6 +60,7 @@
     dest: /etc/apache2/conf-enabled/gemini.conf
     content: |
       AddType text/gemini .gmi
+      AddCharset UTF-8 .gmi
       # With the default dir module configuration disabled, DirectoryIndex index enables multiviews for indexes.
       # This means that you can have index.html and index.gmi and the client and server will negotiate which content to deliver.
       DirectoryIndex index

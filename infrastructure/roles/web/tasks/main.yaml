@@ -66,6 +66,12 @@
       DirectoryIndex index
       LoadModule dir_module /usr/lib/apache2/modules/mod_dir.so
   notify: restart web
+- name: rss
+  ansible.builtin.copy:
+    dest: /etc/apache2/conf-enabled/rss.conf
+    content: |
+      AddCharset UTF-8 .rss
+  notify: restart web
 - name: disable dir mod
   ansible.builtin.command:
     cmd: a2dismod -f dir

@@ -40,7 +40,7 @@
       MDCertificateAgreement accepted
       {% endif %}
 
-      <VirtualHost *:443>
+      <VirtualHost {{ public_hostname_punycode }}:443>
         ServerName {{ public_hostname_punycode }}
         SSLEngine on
 

@@ -65,6 +65,34 @@
         RewriteRule "^/~alex/(.*)" "/~alex/${alexblog:$1}" [R=308,L]
       </VirtualHost>
   notify: restart web
+- name: alex.corcoles.net
+  ansible.builtin.copy:
+    dest: /etc/apache2/sites-enabled/alex-corcoles-net.conf
+    content: |
+      {% if web_server_reachable %}
+      MDomain alex.corcoles.net
+      MDCertificateAgreement accepted
+      {% endif %}
+
+      <VirtualHost alex.corcoles.net:443>
+        ServerName alex.corcoles.net
+        SSLEngine on
+
+      {% if not web_server_reachable %}
+        SSLCertificateFile "/etc/ssl/certs/ssl-cert-snakeoil.pem"
+        SSLCertificateKeyFile "/etc/ssl/private/ssl-cert-snakeoil.key"
+
+      {% endif %}
+        ServerAdmin {{ admin_email }}
+
+        DocumentRoot /home/alex/public_html/
+
+        RewriteEngine on
+        RewriteCond ${alexblog:$1} >""
+        RewriteMap alexblog "txt:/home/alex/public_html/redirections.txt"
+        RewriteRule "^(.*)" "${alexblog:$1}" [R=308,L]
+      </VirtualHost>
+  notify: restart web
 - name: gemini
   ansible.builtin.copy:
     dest: /etc/apache2/conf-enabled/gemini.conf

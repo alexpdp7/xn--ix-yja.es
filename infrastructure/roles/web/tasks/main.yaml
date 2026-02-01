@@ -26,6 +26,11 @@
     cmd: a2enmod headers
     creates: /etc/apache2/mods-enabled/headers.load
   notify: restart web
+- name: enable mod_rewrite
+  ansible.builtin.command:
+    cmd: a2enmod rewrite
+    creates: /etc/apache2/mods-enabled/rewrite.load
+  notify: restart web
 - name: ssl site
   ansible.builtin.copy:
     dest: /etc/apache2/sites-enabled/ssl.conf
@@ -53,6 +58,11 @@
         </Location>
 
         RedirectMatch "^/$" "https://ñix.es/cgit/alex/ñix.es.git/about/"
+
+        RewriteEngine on
+        RewriteCond ${alexblog:$1} >""
+        RewriteMap alexblog "txt:/home/alex/public_html/redirections.txt"
+        RewriteRule "^/~alex/(.*)" "/~alex/${alexblog:$1}" [R=308,L]
       </VirtualHost>
   notify: restart web
 - name: gemini

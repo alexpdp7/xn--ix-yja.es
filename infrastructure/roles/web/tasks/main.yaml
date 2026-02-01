@@ -90,7 +90,7 @@
         RewriteEngine on
         RewriteCond ${alexblog:$1} >""
         RewriteMap alexblog "txt:/home/alex/public_html/redirections.txt"
-        RewriteRule "^(.*)" "${alexblog:$1}" [R=308,L]
+        RewriteRule "^/(.*)" "/${alexblog:$1}" [R=308,L]
       </VirtualHost>
   notify: restart web
 - name: gemini

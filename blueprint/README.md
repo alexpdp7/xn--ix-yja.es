@@ -18,6 +18,10 @@ These documents intend to document how to set up self-hosted services in a reusa
   * [Instant messaging](instant-messaging.md)
   * Others (forums, ActivityPub, ...)
 
+## Experiments
+
+* [Using Yggdrasil/OpenNIC/YunoHost](using_yggdrasil_opennic_yunohost.md)
+
 ## TODO
 
 * Backups (see <https://doc.yunohost.org/en/backup/backup_methods>; Borg, Restic)
